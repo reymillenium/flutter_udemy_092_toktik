@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_udemy_092_toktik/config/theme/app_theme.dart';
-import 'package:flutter_udemy_092_toktik/presentation/screens/home_screen.dart';
+import 'package:flutter_udemy_092_toktik/presentation/providers/discover_provider.dart';
+import 'package:flutter_udemy_092_toktik/presentation/screens/discover/discover_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +13,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme().getTheme(),
-      home: const HomeScreen(title: 'Tok-Tik'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (_) => DiscoverProvider()..loadNextPage(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme().getTheme(),
+        home: const DiscoverScreen(),
+      ),
     );
   }
 }
