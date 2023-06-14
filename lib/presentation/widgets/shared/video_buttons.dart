@@ -37,7 +37,8 @@ class _CustomIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final formatter = NumberFormat('#,###,000');
+    // final formatter = NumberFormat('#,###,000');
+    final formatter = NumberFormat.compact(locale: "en_US", explicitSign: false);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
