@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_udemy_092_toktik/domain/entities/video_post.dart';
 import 'package:intl/intl.dart';
+import 'package:animate_do/animate_do.dart';
 
 class VideoButtons extends StatelessWidget {
   final VideoPost videoPost;
@@ -22,8 +23,31 @@ class VideoButtons extends StatelessWidget {
           iconData: Icons.remove_red_eye_outlined,
         ),
         const SizedBox(height: 20),
-        _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
+        // _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
+        // BounceInDown(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
+        SpinPerfect(
+          infinite: true,
+          duration: Duration(seconds: 2),
+          child: _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
+        ),
+        // FadeInLeft(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
+        // FadeInUp(child: const Square() ),
+        // FadeInDown(child: const Square() ),
+        // FadeInRight(child: const Square() ),
       ],
+    );
+  }
+}
+
+class Square extends StatelessWidget {
+  const Square({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 50,
+      height: 50,
+      color: Colors.blueAccent,
     );
   }
 }
