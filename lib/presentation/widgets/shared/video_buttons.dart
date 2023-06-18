@@ -21,6 +21,8 @@ class VideoButtons extends StatelessWidget {
           value: videoPost.views,
           iconData: Icons.remove_red_eye_outlined,
         ),
+        const SizedBox(height: 20),
+        _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
       ],
     );
   }
@@ -53,10 +55,11 @@ class _CustomIconButton extends StatelessWidget {
           ),
           color: iconColor,
         ),
-        Text(
-          formatter.format(value),
-          style: const TextStyle(fontSize: 10),
-        ),
+        if (value >= 0)
+          Text(
+            formatter.format(value),
+            style: const TextStyle(fontSize: 10),
+          ),
       ],
     );
   }
