@@ -27,7 +27,7 @@ class VideoButtons extends StatelessWidget {
         // BounceInDown(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
         SpinPerfect(
           infinite: true,
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
           child: _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
         ),
         // FadeInLeft(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
