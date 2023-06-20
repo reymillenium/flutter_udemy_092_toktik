@@ -52,20 +52,20 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
     super.dispose();
   }
 
-  void togglePlay(bool isPlaying) {
-    // Wrap the play or pause in a call to `setState`. This ensures the
-    // correct icon is shown.
-    setState(() {
-      // If the video is playing, pause it.
-      // if (_controller.value.isPlaying) {
-      if (isPlaying) {
-        _controller.pause();
-      } else {
-        // If the video is paused, play it.
-        _controller.play();
-      }
-    });
-  }
+  // void togglePlay(bool isPlaying) {
+  //   // Wrap the play or pause in a call to `setState`. This ensures the
+  //   // correct icon is shown.
+  //   setState(() {
+  //     // If the video is playing, pause it.
+  //     // if (_controller.value.isPlaying) {
+  //     if (isPlaying) {
+  //       _controller.pause();
+  //     } else {
+  //       // If the video is paused, play it.
+  //       _controller.play();
+  //     }
+  //   });
+  // }
 
   void syncPlay(bool shouldBePlaying) {
     // Wrap the play or pause in a call to `setState`. This ensures the
@@ -108,13 +108,13 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
                     bufferedColor: Colors.black,
                     playedColor: Colors.blueAccent,
                   ),
-                  padding: const EdgeInsets.only(left: 20, right: 20, bottom: 240),
+                  padding: const EdgeInsets.only(left: 20, right: 20, bottom: 120),
                 ),
                 //   Gradient
                 //   Caption
                 // SliderTheme(data: SliderTheme.of(context), child: Slider(value: value, onChanged: onChanged)),
                 Positioned(
-                  bottom: 50,
+                  bottom: 36,
                   left: 20,
                   child: _VideoCaption(caption: widget.caption),
                 ),
@@ -141,13 +141,13 @@ class _VideoCaption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final titleStyle = Theme.of(context).textTheme.titleLarge;
+    final titleStyle = Theme.of(context).textTheme.titleSmall;
 
     return SizedBox(
       width: screenSize.width * 0.6,
       child: Text(
         caption,
-        maxLines: 2,
+        maxLines: 1,
         style: titleStyle,
       ),
     );

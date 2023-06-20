@@ -29,7 +29,7 @@ class VideoScrollableView extends StatelessWidget {
             // Gradient
             // Video Buttons
             Positioned(
-              bottom: 40,
+              bottom: 56,
               right: 20,
               child: VideoButtons(videoPost: videoPost),
             )

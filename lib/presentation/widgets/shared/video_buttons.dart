@@ -78,7 +78,7 @@ class _CustomIconButton extends StatelessWidget {
     final formatter = NumberFormat.compact(locale: "en_US", explicitSign: false);
 
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
           // onPressed: () {},
