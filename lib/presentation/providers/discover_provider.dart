@@ -8,6 +8,7 @@ class DiscoverProvider extends ChangeNotifier {
 
   bool initialLoading = true;
   List<VideoPost> videoPosts = [];
+  bool isPlaying = false;
 
   Future<void> loadNextPage() async {
     // To fake the delay due to loading the videos from a Remote location
@@ -21,6 +22,18 @@ class DiscoverProvider extends ChangeNotifier {
       videoPosts.add(LocalVideoModel.fromJson(localVideoPostJson).toVideoPostEntity());
     }
     initialLoading = false;
+    notifyListeners();
+  }
+
+
+
+  toggleVideoPlayer() {
+    isPlaying = !isPlaying;
+    notifyListeners();
+  }
+
+  resetVideoPlayer() {
+    isPlaying = false;
     notifyListeners();
   }
 }

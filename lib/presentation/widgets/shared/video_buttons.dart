@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_udemy_092_toktik/domain/entities/video_post.dart';
+import 'package:flutter_udemy_092_toktik/presentation/providers/discover_provider.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:provider/provider.dart';
 
 class VideoButtons extends StatelessWidget {
   final VideoPost videoPost;
@@ -10,6 +13,8 @@ class VideoButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final discoverProvider = context.read<DiscoverProvider>(); //New syntax
+
     return Column(
       children: [
         _CustomIconButton(
@@ -26,9 +31,11 @@ class VideoButtons extends StatelessWidget {
         // _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
         // BounceInDown(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
         SpinPerfect(
-          infinite: true,
+          infinite: false,
           duration: const Duration(seconds: 2),
-          child: _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
+          child: _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {
+            discoverProvider.toggleVideoPlayer();
+          }),
         ),
         // FadeInLeft(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
         // FadeInUp(child: const Square() ),
