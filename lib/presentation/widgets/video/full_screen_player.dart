@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_udemy_092_toktik/presentation/providers/discover_provider.dart';
+import 'package:flutter_udemy_092_toktik/presentation/widgets/video/video_gradient_background.dart';
 import 'package:get/utils.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
@@ -89,17 +90,18 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
                 children: [
                   VideoPlayer(_controller),
                   // _PlayPauseOverlay(controller: _controller),
+                  //   Gradient
+                  VideoGradientBackground(),
                   VideoProgressIndicator(
                     _controller,
                     allowScrubbing: true,
                     colors: const VideoProgressColors(
-                      backgroundColor: Colors.red,
-                      bufferedColor: Colors.black,
-                      playedColor: Colors.blueAccent,
+                      backgroundColor: Colors.blueAccent,
+                      bufferedColor: Colors.blueAccent,
+                      playedColor: Colors.red,
                     ),
                     padding: const EdgeInsets.only(left: 20, right: 20, bottom: 120),
                   ),
-                  //   Gradient
                   //   Caption
                   // SliderTheme(data: SliderTheme.of(context), child: Slider(value: value, onChanged: onChanged)),
                   Positioned(

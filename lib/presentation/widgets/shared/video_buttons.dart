@@ -33,7 +33,7 @@ class VideoButtons extends StatelessWidget {
         // BounceInDown(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
         SpinPerfect(
           infinite: false,
-          duration: const Duration(seconds: 2),
+          duration: const Duration(seconds: 1),
           child: _CustomIconButton(
               value: -1,
               iconData: discoverProvider.isPlaying ? Icons.pause_circle_outline : Icons.play_circle_outline,
