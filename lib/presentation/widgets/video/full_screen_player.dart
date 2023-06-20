@@ -52,21 +52,6 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
     super.dispose();
   }
 
-  // void togglePlay(bool isPlaying) {
-  //   // Wrap the play or pause in a call to `setState`. This ensures the
-  //   // correct icon is shown.
-  //   setState(() {
-  //     // If the video is playing, pause it.
-  //     // if (_controller.value.isPlaying) {
-  //     if (isPlaying) {
-  //       _controller.pause();
-  //     } else {
-  //       // If the video is paused, play it.
-  //       _controller.play();
-  //     }
-  //   });
-  // }
-
   void syncPlay(bool shouldBePlaying) {
     // Wrap the play or pause in a call to `setState`. This ensures the
     // correct icon is shown.
@@ -92,33 +77,38 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
         if (snapshot.connectionState == ConnectionState.done) {
           // If the VideoPlayerController has finished initialization, use
           // the data it provides to limit the aspect ratio of the video.
-          return AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            // Use the VideoPlayer widget to display the video.
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                VideoPlayer(_controller),
-                // _PlayPauseOverlay(controller: _controller),
-                VideoProgressIndicator(
-                  _controller,
-                  allowScrubbing: true,
-                  colors: const VideoProgressColors(
-                    backgroundColor: Colors.red,
-                    bufferedColor: Colors.black,
-                    playedColor: Colors.blueAccent,
+          return GestureDetector(
+            onTap: (){
+              discoverProvider.toggleVideoPlayer();
+            },
+            child: AspectRatio(
+              aspectRatio: _controller.value.aspectRatio,
+              // Use the VideoPlayer widget to display the video.
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  VideoPlayer(_controller),
+                  // _PlayPauseOverlay(controller: _controller),
+                  VideoProgressIndicator(
+                    _controller,
+                    allowScrubbing: true,
+                    colors: const VideoProgressColors(
+                      backgroundColor: Colors.red,
+                      bufferedColor: Colors.black,
+                      playedColor: Colors.blueAccent,
+                    ),
+                    padding: const EdgeInsets.only(left: 20, right: 20, bottom: 120),
                   ),
-                  padding: const EdgeInsets.only(left: 20, right: 20, bottom: 120),
-                ),
-                //   Gradient
-                //   Caption
-                // SliderTheme(data: SliderTheme.of(context), child: Slider(value: value, onChanged: onChanged)),
-                Positioned(
-                  bottom: 36,
-                  left: 20,
-                  child: _VideoCaption(caption: widget.caption),
-                ),
-              ],
+                  //   Gradient
+                  //   Caption
+                  // SliderTheme(data: SliderTheme.of(context), child: Slider(value: value, onChanged: onChanged)),
+                  Positioned(
+                    bottom: 36,
+                    left: 20,
+                    child: _VideoCaption(caption: widget.caption),
+                  ),
+                ],
+              ),
             ),
           );
         } else {
