@@ -1,31 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_udemy_092_toktik/domain/entities/video_post.dart';
-import 'package:flutter_udemy_092_toktik/infrastructure/models/local_video_model.dart';
-import 'package:flutter_udemy_092_toktik/shared/data/local_video_posts.dart';
+import 'package:flutter_udemy_092_toktik/domain/repositories/video_posts_repository.dart';
 
 class DiscoverProvider extends ChangeNotifier {
-  // TODO: Repository and a DataSource. To do the next time
-
+  final VideoPostsRepository videoPostsRepository;
   bool initialLoading = true;
   List<VideoPost> videoPosts = [];
   bool isPlaying = false;
 
+  DiscoverProvider({required this.videoPostsRepository});
+
   Future<void> loadNextPage() async {
-    // To fake the delay due to loading the videos from a Remote location
-    await Future.delayed(const Duration(seconds: 2));
-    // List<VideoPost> newVideoPosts = localVideoPosts.map((localVideoPostJson) => LocalVideoModel.fromJson(localVideoPostJson).toVideoPostEntity()).toList();
-    // videoPosts.addAll(newVideoPosts);
-    // localVideoPosts.forEach((localVideoPostJson) {
-    //   videoPosts.add(LocalVideoModel.fromJson(localVideoPostJson).toVideoPostEntity());
-    // });
-    for (var localVideoPostJson in localVideoPosts) {
-      videoPosts.add(LocalVideoModel.fromJson(localVideoPostJson).toVideoPostEntity());
-    }
+    videoPosts.addAll(await videoPostsRepository.getTrendingVideosByPage(1));
     initialLoading = false;
     notifyListeners();
   }
-
-
 
   toggleVideoPlayer() {
     isPlaying = !isPlaying;

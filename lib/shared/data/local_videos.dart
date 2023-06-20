@@ -1,4 +1,4 @@
-List<Map<String, dynamic>> localVideoPosts = [
+List<Map<String, dynamic>> localVideos = [
   {
     'name': 'Subiendo escaleras automáticas',
     'videoUrl': 'assets/videos/1.mp4',
