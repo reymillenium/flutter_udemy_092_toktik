@@ -15,7 +15,8 @@ class VideoButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     final discoverProvider = context.read<DiscoverProvider>(); //New syntax
 
-    return Column(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _CustomIconButton(
           value: videoPost.likes,
@@ -27,15 +28,18 @@ class VideoButtons extends StatelessWidget {
           value: videoPost.views,
           iconData: Icons.remove_red_eye_outlined,
         ),
-        const SizedBox(height: 20),
+        const SizedBox(width: 20),
         // _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}),
         // BounceInDown(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
         SpinPerfect(
           infinite: false,
           duration: const Duration(seconds: 2),
-          child: _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {
-            discoverProvider.toggleVideoPlayer();
-          }),
+          child: _CustomIconButton(
+              value: -1,
+              iconData: discoverProvider.isPlaying ? Icons.pause_circle_outline : Icons.play_circle_outline,
+              onPressed: () {
+                discoverProvider.toggleVideoPlayer();
+              }),
         ),
         // FadeInLeft(child:  _CustomIconButton(value: -1, iconData: Icons.play_circle_outline, onPressed: () {}) ),
         // FadeInUp(child: const Square() ),
