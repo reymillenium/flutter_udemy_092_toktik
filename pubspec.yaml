@@ -39,6 +39,7 @@ dependencies:
   intl: ^0.18.1                       # https://pub.dev/packages/intl
   animate_do: ^3.0.2                  # https://pub.dev/packages/animate_do
   video_player: ^2.6.1                # https://pub.dev/packages/video_player
+  get: ^4.6.5                         # https://pub.dev/packages/get/install
 
 dev_dependencies:
   flutter_test:
