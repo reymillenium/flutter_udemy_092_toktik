@@ -1,4 +1,4 @@
-export 'package:flutter_udemy_092_toktik/config/theme/themes.dart';
+export 'package:flutter_udemy_092_toktik/config/themes/themes.dart';
 
 export 'package:flutter_udemy_092_toktik/domain/datasources/datasources.dart';
 export 'package:flutter_udemy_092_toktik/domain/entities/entities.dart';
