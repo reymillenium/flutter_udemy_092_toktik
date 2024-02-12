@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_udemy_092_toktik/presentation/providers/discover_provider.dart';
-import 'package:flutter_udemy_092_toktik/presentation/widgets/video/video_gradient_background.dart';
-import 'package:get/utils.dart';
-import 'package:provider/provider.dart';
-import 'package:video_player/video_player.dart';
-// import 'package:video_slider/video_editor_controller.dart';
+import 'package:flutter_udemy_092_toktik/flutter_resources.dart';
+import 'package:flutter_udemy_092_toktik/external_resources.dart';
+import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class FullScreenPlayer extends StatefulWidget {
   final String videoUrl;

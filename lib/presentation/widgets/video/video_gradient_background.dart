@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_udemy_092_toktik/flutter_resources.dart';
+import 'package:flutter_udemy_092_toktik/external_resources.dart';
+import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class VideoGradientBackground extends StatelessWidget {
   final List<Color> colors;

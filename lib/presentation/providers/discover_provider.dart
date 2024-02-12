@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_udemy_092_toktik/domain/entities/video_post.dart';
-import 'package:flutter_udemy_092_toktik/domain/repositories/video_posts_repository.dart';
+import 'package:flutter_udemy_092_toktik/flutter_resources.dart';
+import 'package:flutter_udemy_092_toktik/external_resources.dart';
+import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class DiscoverProvider extends ChangeNotifier {
   final VideoPostsRepository videoPostsRepository;
   bool initialLoading = true;
-  List<VideoPost> videoPosts = [];
+  List<VideoPostEntity> videoPosts = [];
   bool isPlaying = false;
 
   DiscoverProvider({required this.videoPostsRepository});

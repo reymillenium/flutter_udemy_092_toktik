@@ -1,13 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_udemy_092_toktik/domain/entities/video_post.dart';
-import 'package:flutter_udemy_092_toktik/presentation/providers/discover_provider.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:intl/intl.dart';
-import 'package:animate_do/animate_do.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_udemy_092_toktik/flutter_resources.dart';
+import 'package:flutter_udemy_092_toktik/external_resources.dart';
+import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class VideoButtons extends StatelessWidget {
-  final VideoPost videoPost;
+  final VideoPostEntity videoPost;
 
   const VideoButtons({super.key, required this.videoPost});
 

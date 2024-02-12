@@ -1,4 +1,6 @@
-import 'package:flutter_udemy_092_toktik/domain/entities/video_post.dart';
+import 'package:flutter_udemy_092_toktik/flutter_resources.dart';
+import 'package:flutter_udemy_092_toktik/external_resources.dart';
+import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class LocalVideoModel {
   String name;
@@ -27,5 +29,5 @@ class LocalVideoModel {
         "views": views,
       };
 
-  VideoPost toVideoPostEntity() => VideoPost(caption: name, videoUrl: videoUrl, likes: likes, views: views);
+  VideoPostEntity toVideoPostEntity() => VideoPostEntity(caption: name, videoUrl: videoUrl, likes: likes, views: views);
 }

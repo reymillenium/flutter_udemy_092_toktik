@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_udemy_092_toktik/domain/entities/video_post.dart';
-import 'package:flutter_udemy_092_toktik/presentation/widgets/shared/video_buttons.dart';
-import 'package:flutter_udemy_092_toktik/presentation/widgets/video/full_screen_player.dart';
+import 'package:flutter_udemy_092_toktik/flutter_resources.dart';
+import 'package:flutter_udemy_092_toktik/external_resources.dart';
+import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class VideoScrollableView extends StatelessWidget {
-  final List<VideoPost> videoPosts;
+  final List<VideoPostEntity> videoPosts;
 
   const VideoScrollableView({super.key, required this.videoPosts});
 
@@ -15,7 +14,7 @@ class VideoScrollableView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: videoPosts.length,
       itemBuilder: (context, index) {
-        final VideoPost videoPost = videoPosts[index];
+        final VideoPostEntity videoPost = videoPosts[index];
 
         return Stack(
           children: [

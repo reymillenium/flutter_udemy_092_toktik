@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_udemy_092_toktik/presentation/providers/discover_provider.dart';
-import 'package:flutter_udemy_092_toktik/presentation/widgets/shared/video_scrollable_view.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_udemy_092_toktik/flutter_resources.dart';
+import 'package:flutter_udemy_092_toktik/external_resources.dart';
+import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
