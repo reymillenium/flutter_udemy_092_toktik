@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           lazy: false,
+          // Using a cascade operator (..)
           create: (_) => DiscoverProvider(videoPostsRepository: videoPostsRepository)..loadNextPage(),
         ),
       ],
