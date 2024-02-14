@@ -11,6 +11,7 @@ class VideoScrollableView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView.builder(
       scrollDirection: Axis.vertical,
+      // Important to make it work in Android
       physics: const BouncingScrollPhysics(),
       itemCount: videoPosts.length,
       itemBuilder: (context, index) {

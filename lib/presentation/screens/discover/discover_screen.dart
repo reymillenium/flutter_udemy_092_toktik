@@ -7,8 +7,8 @@ class DiscoverScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final discoverProvider = Provider.of<DiscoverProvider>(context); // Old syntax. default is -> listen: true, like the watch
-    final discoverProvider = context.watch<DiscoverProvider>(); //New syntax
+    // final discoverProvider = Provider.of<DiscoverProvider>(context); // Old syntax. By default: listen: true, like the watch. It executes build after any change on the provider
+    final discoverProvider = context.watch<DiscoverProvider>(); //New syntax. It executes build after any change on the provider (with read it won't, which is the same as listen: false in the old syntax)
 
     return Scaffold(
         body: discoverProvider.initialLoading
