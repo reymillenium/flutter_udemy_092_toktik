@@ -12,7 +12,7 @@ class LocalVideoDataSourceImpl implements VideoPostsDataSource {
   Future<List<VideoPostEntity>> getTrendingVideosByPage(int page) async {
     // To fake the delay due to loading the videos from a Remote location
     await Future.delayed(const Duration(seconds: 2));
-    List<VideoPostEntity> newVideoPosts = localVideos.map((jsonMap) => LocalVideoModel.fromJson(jsonMap).toVideoPostEntity()).toList();
-    return newVideoPosts;
+    List<VideoPostEntity> newVideoPostEntities = localVideos.map((jsonMap) => LocalVideoModel.fromJson(jsonMap).toVideoPostEntity()).toList();
+    return newVideoPostEntities;
   }
 }

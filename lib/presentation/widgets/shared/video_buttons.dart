@@ -3,9 +3,9 @@ import 'package:flutter_udemy_092_toktik/external_resources.dart';
 import 'package:flutter_udemy_092_toktik/internal_resources.dart';
 
 class VideoButtons extends StatelessWidget {
-  final VideoPostEntity videoPost;
+  final VideoPostEntity videoPostEntity;
 
-  const VideoButtons({super.key, required this.videoPost});
+  const VideoButtons({super.key, required this.videoPostEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +15,13 @@ class VideoButtons extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _CustomIconButton(
-          value: videoPost.likes,
+          value: videoPostEntity.likes,
           iconData: Icons.favorite,
           iconColor: Colors.red,
           onPressed: () {},
         ),
         _CustomIconButton(
-          value: videoPost.views,
+          value: videoPostEntity.views,
           iconData: Icons.remove_red_eye_outlined,
         ),
         const SizedBox(width: 20),

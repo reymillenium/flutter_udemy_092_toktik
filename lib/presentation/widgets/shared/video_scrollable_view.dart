@@ -15,15 +15,15 @@ class VideoScrollableView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: videoPosts.length,
       itemBuilder: (context, index) {
-        final VideoPostEntity videoPost = videoPosts[index];
+        final VideoPostEntity videoPostEntity = videoPosts[index];
 
         return Stack(
           children: [
             // Video Player
             SizedBox.expand(
               child: FullScreenPlayer(
-                videoUrl: videoPost.videoUrl,
-                caption: videoPost.caption,
+                videoUrl: videoPostEntity.videoUrl,
+                caption: videoPostEntity.caption,
               ),
             ),
             // Gradient
@@ -31,7 +31,7 @@ class VideoScrollableView extends StatelessWidget {
             Positioned(
               bottom: 56,
               right: 20,
-              child: VideoButtons(videoPost: videoPost),
+              child: VideoButtons(videoPostEntity: videoPostEntity),
             )
           ],
         );
