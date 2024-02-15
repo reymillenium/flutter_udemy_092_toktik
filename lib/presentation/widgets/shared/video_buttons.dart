@@ -77,20 +77,12 @@ class _CustomIconButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
-          // onPressed: () {},
           onPressed: onPressed,
           disabledColor: iconColor,
-          icon: Icon(
-            iconData,
-            size: 30,
-          ),
+          icon: Icon(iconData, size: 30),
           color: iconColor,
         ),
-        if (value >= 0)
-          Text(
-            formatter.format(value),
-            style: const TextStyle(fontSize: 10),
-          ),
+        if (value >= 0) Text(formatter.format(value), style: const TextStyle(fontSize: 10)),
       ],
     );
   }
